@@ -3,6 +3,6 @@ public class Main {
         CustomerService customerService = new CustomerService();
         LoginService loginService = new LoginService(customerService);
         UserInputService userInputService = new UserInputService(loginService);
-        userInputService.loginInput();
+//        userInputService.loginInput();
     }
 }
