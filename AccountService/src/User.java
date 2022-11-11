@@ -9,12 +9,6 @@ public class User {
     public void setUserName(String newUsername){
        this.userName = newUsername;
     }
-    public int getCustomerId(){
-        return customerId;
-    }
-    public void setCustomerId(int newCustomerId){
-        this.customerId = newCustomerId;
-    }
     public String getPassword() {
         return password;
     }
