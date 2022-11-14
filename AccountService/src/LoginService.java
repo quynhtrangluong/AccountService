@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class LoginService {
-	CustomerService customerService;
+	private CustomerService customerService;
 
-	public LoginService(CustomerService customerService) {
+	public LoginService(final CustomerService customerService) {
 		this.customerService = customerService;
 	}
 
-	public boolean verifyUser(String username, String password) {
-		ArrayList<User> database = customerService.userList;
+	public boolean verifyUser(final String username,final String password) {
+		ArrayList<User> database = customerService.getUserList();
 		customerService.createData();
 
 		for (User user : database) {

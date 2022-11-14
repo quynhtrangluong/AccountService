@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInputService {
-	Scanner userInput = new Scanner(System.in);
-	LoginService loginService;
-	CustomerService customerService;
+	 private Scanner userInput = new Scanner(System.in);
+	 private LoginService loginService;
+	 private CustomerService customerService;
 
 	public UserInputService(LoginService loginService, CustomerService customerService) {
 		this.loginService = loginService;
@@ -26,7 +26,7 @@ public class UserInputService {
 	}
 
 	public void createAccountInput() {
-		ArrayList<User> newUserDatabase = customerService.userList;
+		ArrayList<User> newUserDatabase = customerService.getUserList();
 		customerService.createData();
 
 		boolean isNewUsernamePasswordValid = false;
@@ -54,14 +54,12 @@ public class UserInputService {
 				isPasswordValid = false;
 			}
 
+
 			isNewUsernamePasswordValid = isUsernameValid && isPasswordValid;
 		}
 		while (!isNewUsernamePasswordValid);
 
-		User newUser = new User();
-		newUser.setUserName(newUsername);
-		newUser.setPassword(newPassword);
-		newUser.setAdmin(false);
+		User newUser = new User(newUsername, newPassword, false);
 		customerService.addUser(newUser);
 		System.out.println("Account successfully created !!!");
 	}
