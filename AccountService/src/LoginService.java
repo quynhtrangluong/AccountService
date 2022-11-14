@@ -1,21 +1,20 @@
 import java.util.ArrayList;
 
 public class LoginService {
-    CustomerService customerService;
+	private CustomerService customerService;
 
-    public LoginService(CustomerService customerService) {
-        this.customerService = customerService;
-    }
+	public LoginService(final CustomerService customerService) {
+		this.customerService = customerService;
+	}
 
-    public boolean verifyUser(String username, String password){
-        ArrayList<User> database = customerService.userList;
-        customerService.createData();
+	public boolean verifyUser(final String username,final String password) {
+		ArrayList<User> database = customerService.getUserList();
 
-        for(User user : database) {
-            if(username.equals(user.getUserName()) && password.equals(user.getPassword())){
-                return true;
-            }
-        }
-        return false;
-    }
+		for (User user : database) {
+			if (username.equals(user.getUserName()) && password.equals(user.getPassword())) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
