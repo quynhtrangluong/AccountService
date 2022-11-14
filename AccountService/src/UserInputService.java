@@ -6,7 +6,7 @@ public class UserInputService {
 	 private LoginService loginService;
 	 private CustomerService customerService;
 
-	public UserInputService(LoginService loginService, CustomerService customerService) {
+	public UserInputService(final LoginService loginService, final CustomerService customerService) {
 		this.loginService = loginService;
 		this.customerService = customerService;
 	}
@@ -21,13 +21,11 @@ public class UserInputService {
 			System.out.println("Username and password is valid");
 		} else {
 			System.out.println("Username and password is invalid");
-
 		}
 	}
 
 	public void createAccountInput() {
 		ArrayList<User> newUserDatabase = customerService.getUserList();
-		customerService.createData();
 
 		boolean isNewUsernamePasswordValid = false;
 		String newUsername;

@@ -9,7 +9,6 @@ public class LoginService {
 
 	public boolean verifyUser(final String username,final String password) {
 		ArrayList<User> database = customerService.getUserList();
-		customerService.createData();
 
 		for (User user : database) {
 			if (username.equals(user.getUserName()) && password.equals(user.getPassword())) {
