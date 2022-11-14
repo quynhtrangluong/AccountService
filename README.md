@@ -29,7 +29,7 @@ This is a Java learning project that imitates an account management service.
 </details>
 <!-- ABOUT THE PROJECT -->
 <h3 align="left">About the project </h3>
-I used this project like an exersize for myself to study Java. The project is about building an Account Service System that can solve some basic need of customer are log in, create account, check personal information. I plan to keep updating the system to build more function like updating information, create admin account that have the access to all the customer's information. 
+I used this project as an exercise to study Java. This project aims to build an Account Service System that can solve some basic needs of customers, which are loggin in, creating account and checking personal information. This is currently a work of progress, and I will keep updating the system to build more functions such as updating customer information, creating admin accounts that have access to all the customer's information.
 <h4 align="left">Build with</h4>
 This Project is only build by Java. 
 <h3 align="left">Getting Started </h3>
