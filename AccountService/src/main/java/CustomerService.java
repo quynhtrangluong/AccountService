@@ -21,8 +21,17 @@ public class CustomerService {
 		userList.add(user3);
 	}
 
-	public void addUser(User user) {
+	public void addUser(final User user) {
 		userList.add(user);
 	}
-}
+	public void printAllCustomersInfo() {
+		for (User user : userList) {
+			System.out.println("Name: " + user.getUserName());
+			System.out.println("admin: " + user.getAdmin());
+			System.out.println("password: " + user.getPassword());
+			System.out.println("-----------");
+			}
+		}
+
+	}
 
