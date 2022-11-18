@@ -84,7 +84,7 @@ public class UserInputService {
 		}
 		customerActionInput(currentUser);
 	}
-	public void customerActionInput(User user){
+	public void customerActionInput(final User user){
 		System.out.println("What's action do you want to do now");
 		if(user.getAdmin() == true){
 			System.out.println("1. Print all customer's information");
