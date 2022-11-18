@@ -21,15 +21,14 @@ public class CustomerService {
 		userList.add(user3);
 	}
 
-	public void addUser(User user) {
+	public void addUser(final User user) {
 		userList.add(user);
 	}
 	public void printAllCustomersInfo() {
-		for (int i=0; i<userList.size(); i++) {
-			User currentUser = userList.get(i);
-			System.out.println("Name: " + currentUser.getUserName());
-			System.out.println("admin: " + currentUser.getAdmin());
-			System.out.println("password: " + currentUser.getPassword());
+		for (User user : userList) {
+			System.out.println("Name: " + user.getUserName());
+			System.out.println("admin: " + user.getAdmin());
+			System.out.println("password: " + user.getPassword());
 			System.out.println("-----------");
 			}
 		}

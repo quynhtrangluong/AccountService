@@ -82,36 +82,38 @@ public class UserInputService {
 		} else {
 			currentUser = createAccountInput();
 		}
+		customerActionInput(currentUser);
+	}
+	public void customerActionInput(User user){
 		System.out.println("What's action do you want to do now");
-		if(currentUser.getAdmin() == true){
+		if(user.getAdmin() == true){
 			System.out.println("1. Print all customer's information");
 			System.out.println("2. Delete customer's information");
 			System.out.println("3. Print selected customer details");
 			System.out.println("Please choose a number for the action you want");
-			String adminSelectOption;
-			adminSelectOption = userInput.nextLine();
-			if(adminSelectOption.equals("1")){
-				customerService.printAllCustomersInfo();
-			}
-			if(adminSelectOption.equals("2")){
-				System.out.println("Please choose customer you want to delete");
-				System.out.println("Customer name: ");
-				String deleteCustomer;
-				deleteCustomer = userInput.nextLine();
-				if(loginService.verifyUsername(deleteCustomer)){
-					loginService.deleteSelectCustomerInfo(deleteCustomer);
-				}
-				else {
-					System.out.println("Account name does not exist");
-				}
-			}
-			if(adminSelectOption.equals("3")){
-				System.out.println("PLease choose customer you want to print out");
-				String printCustomer;
-				printCustomer = userInput.nextLine();
-				if(loginService.verifyUsername(printCustomer)){
+			String adminSelectOption = userInput.nextLine();
+			switch (adminSelectOption){
+				case "1":
+					customerService.printAllCustomersInfo();
+					break;
+				case "2":
+					System.out.println("Please choose customer you want to delete");
+					System.out.println("Customer name: ");
+					String deleteCustomer = userInput.nextLine();
+					if(loginService.verifyUsername(deleteCustomer)){
+						loginService.deleteSelectCustomerInfo(deleteCustomer);
+					}
+					else {
+						System.out.println("Account name does not exist");
+					}
+					break;
+				case "3":
+					System.out.println("PLease choose customer you want to print out");
+					String printCustomer = userInput.nextLine();
+					if(loginService.verifyUsername(printCustomer)){
 						loginService.printSelectCustomerInfo(printCustomer);
-				}
+					}
+					break;
 			}
 		}
 		else{
@@ -120,11 +122,13 @@ public class UserInputService {
 			System.out.println("Please choose a number for the action you want");
 			String customerSelectOption;
 			customerSelectOption = userInput.nextLine();
-			if(customerSelectOption.equals("1")){
-				loginService.printSelectCustomerInfo(currentUser.getUserName());
-			}
-			if(customerSelectOption.equals("2")){
-				loginService.deleteSelectCustomerInfo(currentUser.getUserName());
+			switch (customerSelectOption) {
+				case "1":
+					loginService.printSelectCustomerInfo(user.getUserName());
+					break;
+				case "2":
+					loginService.deleteSelectCustomerInfo(user.getUserName());
+					break;
 			}
 		}
 

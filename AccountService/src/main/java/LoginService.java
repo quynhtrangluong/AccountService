@@ -28,7 +28,7 @@ public class LoginService {
 		return false;
 	}
 
-	public void printSelectCustomerInfo(String username) {
+	public void printSelectCustomerInfo(final String username) {
 		ArrayList<User> database = customerService.getUserList();
 		for (User user : database) {
 			if (username.equals(user.getUserName())) {
@@ -40,7 +40,7 @@ public class LoginService {
 		}
 	}
 
-	public void deleteSelectCustomerInfo(String username) {
+	public void deleteSelectCustomerInfo(final String username) {
 		ArrayList<User> database = customerService.getUserList();
 		User userToRemove = null;
 		for (User user : database) {
